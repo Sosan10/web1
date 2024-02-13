@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComuniKT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+        
+    <link rel="icon" href="images/icono_Cominkt.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        yellow: '#FECC02',
+                        white: '#FFFFFF',
+                        black: '#131313',
+                        gray: '#4E4E4E',
+                        customBlue: '#0E5E85'
+                    },
+                    fontFamily: {
+                        bebas: ["Bebas Neue", "cursive"],
+                        montserrat: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark');
+            const moonImage = document.getElementById('moonImage');
+            const sunImage = document.getElementById('sunImage');
+            moonImage.classList.toggle('hidden');
+            sunImage.classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        function toggleLanguageList() {
+            var languageList = document.getElementById("languageList");
+            languageList.classList.toggle("hidden");
+        }
+    </script>
+</head>
+<style>
+    html{
+        scroll-behavior: smooth ;
+    }
+</style>
+
+<body class="transition duration-1000 dark:bg-stone-900">
+    <header>
+        <nav class="border-gray-200 px-4 lg:px-6 py-2.5 transition duration-1000 dark:bg-stone-900 fixed top-0 left-0 z-20 right-0 bg-white">
+            <div class="flex flex-wrap items-center justify-between">
+                <div class="flex items-center">
+                    <img src="images/icono_Cominkt.png" class="w-16 h-auto ml-4 z-20">
+                    <h1 class="text-5xl py-3 md:p-0 font-bebas font-bold z-20 dark:text-teal-700 ml-2 hover:text-teal-700 ">ComuniKT</h1>
+                </div>
+                    <div>
+                        <input type="checkbox" name="hamburger" id="hamburger" class="peer hidden">
+                        <label for="hamburger" class="peer-checked:hamburger block cursor-pointer md:hidden transition p-5 rounded">
+                            <img src="images/menu.png" class="menu-icon bg-white rounded-xl p-3 md:hidden h-12" alt="menu">
+                        </label>
+    
+                        <div class="bg-white w-2/5 transition duration-700 flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:translate-x-0 md:flex-row dark:bg-stone-900">
+                            <div class="px-6 pt-32 flex flex-col md:flex-row md:items-center gap-5 md:p-0 dark:text-white  dark:bg-stone-900 transition duration-1000">
+                                <div class="w-10 dark:bg-white rounded-full">
+                                    <a href="javascript:void(0)" class=" transition duration-1000" onclick="toggleLanguageList()"><img src="images/mundo.png"></a>
+                                    <ul id="languageList" class="hidden mt-2 absolute bg-white border rounded-md shadow-md">
+                                        <li class="px-4 py-2 hover:bg-gray-100 dark:text-white dark:bg-black transition duration-700"><a href="index.es.html">Spanish</a></li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 dark:text-white dark:bg-black transition duration-700"><a href="index_in.html">English</a></li>
+                                        <li class="px-4 py-2 hover:bg-gray-100 dark:text-white dark:bg-black transition duration-700"><a href="index_que.html">Quechua</a></li>
+                                    </ul>
+                                </div>
+                                <a class="tracking-wide cursor-pointer py-3 font-semibold hover:text-teal-700 font-bebas text-3xl" href="index.es.html#comunikt">HOME</a>
+                                <a class="tracking-wide cursor-pointer py-3 font-semibold hover:text-teal-700 font-bebas text-3xl" href="index.es.html#redes">NETWORKS</a>
+                                <a class="tracking-wide cursor-pointer py-3 font-semibold hover:text-teal-700 font-bebas text-3xl" href="index.es.html#productos">
+                                    BENEFITS</a>
+                                <div class="flex items-center lg:order-2 py-2 px-3">
+                                    <button onclick="toggleDarkMode()" onclick="closeMobileMenu()" class="bg-black rounded-full p-2 hover:scale-125 hover:duration-500 w-10">
+                                        <img id="moonImage" src="images/luna.png" alt="" class="dark:hidden transition duration-700 ease-in-out">
+                                        <img id="sunImage" src="images/sol.png" alt="" class="dark:visible hidden text-teal-700">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </nav>
+
+        <section class="bg-[url('images/fondoComuniKT.webp')] h-screen bg-cover pt-20" id="comunikt">
+            <div class="md:w-[80%] md:m-auto flex items-center h-full ">
+                <div class="px-4 ">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-normal font-bebas mb-4">YOUR VOICE</h3>
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal font-bebas">
+                        <span class="text-black mb-3 sm:mb-4 lg:mb-5 font-bold">
+                            YOUR SPACE</span><br>
+                        <span class="text-teal-700 font-bold">
+                            EXPRESS YOURSELF FREELY.</span>
+                    </h1>
+                    <a href="#Citas"
+                        class="cursor-pointer text-black font-bebas border-4 border-slate-600 px-4 sm:px-5 py-3 hover:bg-white hover:text-black hover:border-teal-700 transition-all">
+                        
+Find out more
+                    </a>
+                </div>
+            </div>
+        </section>
+    </header>
+    <div class="">
+        <a href="https://wa.me/+51971485848" class="fixed bottom-5 right-5 bg-green-500 text-white p-2 md:p-4 border-none rounded-full text-center shadow-md z-50 hover:scale-110" target="_blank">
+            <img src="images/whasapp.png" alt="Whatsapp" width="30px">
+        </a>
+    </div>
+    <main id="Citas" class="dark:bg-stone-950 transition duration-1000 pt-10">
+        <section class="px-4 dark:bg-stone-950 transition duration-1000">
+            <div class="border-4 border-black md:w-[80%] md:mx-auto dark:bg-stone-900 transition duration-1000">
+                <div class="md:flex justify-between p-5 gap-8">
+                    <div class="bg-[url('images/orador.avif')] bg-cover bg-center md:w-1/2 h-[500px] flex justify-center items-end">
+                        <div class="bg-white p-2 rounded shadow-md text-center -mb-4">
+                            <h2 class="text-black text-3xl font-bebas font-normal">
+                                IMPROVING YOUR COMMUNICATION SKILLS</h2>
+                        </div>
+                    </div>
+                    <div class="mt-10 md:mt-0 md:w-1/2">
+                        <h3 class="text-xl text-black font-normal font-bebas mb-2 dark:text-white">
+                            Us</h3>
+                        <h1 class="text-7xl text-blue-400 font-normal font-bebas">
+                            Join the community!
+                        </h1>
+                        <p class="text-base text-black font-normal font-montserrat mb-9 dark:text-white">
+                            Overcome your limits by improving your communication skills!</p>
+                        <div class="max-w-md mx-auto dark:bg-white p-2 rounded-md shadow-md ">
+
+                            <h2 class="text-2xl font-semibold mb-4 text-center text-blue-800">
+                                JOIN UP</h2>
+                            <form action="#" method="post">                  
+                                <div class="mb-4">
+                                    <label for="nombre-dueño" class="block text-gray-700 text-sm font-bold mb-2">
+                                        Name</label>
+                                    <input type="text" id="nombre-dueño" name="nombre-dueño" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="nombre-mascota" class="block text-gray-700 text-sm font-bold mb-2">
+                                        Gmail</label>
+                                    <input type="text" id="nombre-mascota" name="nombre-mascota" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="telefono" class="block text-gray-700 text-sm font-bold mb-2">
+                                        Phone</label>
+                                    <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+                                        Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex justify-center dark:bg-stone-950 transition duration-1000 pb-10 " id="productos">
+            <div class="p-4 dark:text-white">
+                <div class="text-center p-10">
+                    <h1 class="text-black text-7xl font-bebas font-normal text-center  dark:text-white transition duration-1000">BENEFITS OF OUR SERVICE</h1>
+                </div>
+                <div class="grid grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
+                    <div class="dark:bg-stone-900 rounded-lg shadow-xl transition duration-1000 w-auto text-center">
+                        <div class="flex justify-center">
+                            <img class="object-cover object-center w-80 h-80 p-5" src="images/nube.png" alt="">
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold text-teal-700 dark:text-white text-center">RECORDED CLASSES</h3>
+                            <p class="font-semibold text-slate-500 text-xl p-2 whitespace-pre-line">Your classes will be recorded at all times.</p>
+                            <div class="flex justify-between p-4">
+                                <button class="rounded-2xl text-xl py-3 px-2 shadow-lg bg-black text-white font-bold justify-between">
+                                    See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dark:bg-stone-900 rounded-lg shadow-xl  transition duration-1000 text-center w-auto">
+                        <div class="flex justify-center">
+                            <img class="object-cover object-center w-80 h-80 p-5" src="images/chat bot.png" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="text-3xl font-bold text-teal-700 dark:text-white text-center">CHATBOT</h3>
+                            <p class="font-semibold text-slate-500 text-xl p-2 whitespace-pre-line">You have a CHATBOT 24 hours a day.</p>
+                            <div class="flex justify-between p-4">
+                                <button class="rounded-2xl text-xl py-3 px-2 shadow-lg bg-black text-white font-bold">
+                                    See more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dark:bg-stone-900 rounded-lg shadow-xl  transition duration-1000 text-center w-auto">
+                        <div class="flex justify-center">
+                            <img class="object-cover object-center w-96 h-80 p-5" src="images/SO.jpg" alt="">
+                        </div>
+                        <div class="">
+                            <h3 class="text-3xl font-bold text-teal-700 dark:text-white text-center">VARIEDAD</h3>
+                            <p class="font-semibold text-slate-500 p-2 text-xl whitespace-pre-line">Compatible with any operating system.</p>
+                            <div class="flex justify-between p-4">
+                                <button href="" class="rounded-2xl text-xl py-3 px-2 shadow-lg bg-black text-white font-bold">
+                                    See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="flex justify-center flex-col transition duration-1000 ease-in-out dark:bg-stone-950 gap-20 pb-10">
+        
+            <div class="">
+                <h2 class="text-black text-7xl font-bebas text-center dark:text-white transition duration-1000 ">
+                    COMMENTS</h2>
+            </div>
+    
+            <div class="grid gri-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-xl dark:text-white">
+                    <div class="hover:scale-90 hover:duration-300 flex justify-center">
+                        <img class="rounded-full object-cover h-64 w-48" src="images/persona01.jpg" alt="">
+                    </div>
+                    <div class=" text-center">
+                        <p class="text-center font-extrabold text-2xl uppercase pt-4"> Alejandro García</p>
+                        <p class="font-bold whitespace-pre-line">    
+                        I no longer have to worry about those annoying fillers!
+                        thanks to this innovative tool!
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="rounded-xl dark:text-white">
+                    <div class="hover:scale-90 hover:duration-300 flex justify-center rounded-xl">
+                        <img class="rounded-full object-center object-cover h-64 w-48" src="images/persona02.jpg" alt="">
+                    </div>
+                    <div class=" text-center">
+                        <p class="text-center font-extrabold text-2xl uppercase pt-4">Javier Martínez</p>
+                        <p class="font-bold whitespace-pre-line">
+                            Definitely recommended for anyone who wants
+                            stand out in your communication skills!
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="rounded-xl dark:text-white">
+                    <div class="flex justify-center hover:scale-90 hover:duration-300 rounded-xl">
+                        <img class="rounded-full object-cover h-64 w-64" src="images/persona03.jpg" alt="">
+                    </div>
+                    <div class="text-center">
+                        <p class="text-center font-extrabold text-2xl uppercase pt-4">María Rodríguez</p>
+                        <p class="font-bold whitespace-pre-line">
+                            With your help, I am gaining confidence and skills
+                            that I know will be vital for my future. Recommended!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+    
+
+    <footer class="bg-stone-950 p-4">
+        <div class="flex text-white flex-col lg:flex-row justify-center text-center gap-20">
+                        <div class="py-5">
+                            <p class="text-5xl font-bebas ">ABOUT US?</p>
+                            <p class="text-lg whitespace-pre-line">
+                                We are a team of innovative university students!
+                                We develop a web/mobile application that uses artificial 
+                                intelligence to improve your communication skills in real time.
+                                Forget about annoying fillers and insecure posture when speaking.
+                                This is the beginning of your journey towards more effective and 
+                                secure communication! 🤖
+                            </p>
+                        </div>
+                        <div class="py-5">
+                            <p class="text-5xl font-bebas">SPONSORS</p>
+                            <div class="lg:grid-cols-2 grid grid-cols-1 items-center">
+                                <div class="hover:scale-105 flex justify-center">
+                                    <a class="w-72 h-30" href="" target="_blank">
+                                        <img class="object-cover object-center" src="images/microfost.png" alt="">
+                                    </a>
+                                </div>
+            
+                                <div class="hover:scale-105 flex justify-center">
+                                    <a class="w-72 h-30" href="" target="_blank">
+                                        <img class="object-cover object-center" src="images/acerPNG.png" alt="">
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="flex flex-col py-5" id="redes">
+                            <h2 class="text-5xl font-bebas ">OUR SOCIAL NETWORKS</h2>
+                            <div class="flex justify-center">
+                                <button class=" m-2 hover:scale-105" href="">
+                                    <img class="object-cover p-4 w-20" src="images/facebook.png" alt="Facebook">
+                                </button>
+                                <button class="m-2 hover:scale-105" href="">
+                                    <img class="object-cover p-4 w-20" src="images/instagram.png" alt="Twitter">
+                                </button>
+                                <button class="m-2 hover:scale-105" href="" >
+                                    <img class="p-4 w-20" src="images/youtube.png" alt="Instagram">
+                                </button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
